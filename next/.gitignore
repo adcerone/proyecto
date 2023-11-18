@@ -1,0 +1,55 @@
+# Node.js
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+lib/
+vendor/
+
+# Optional: You might want to ignore the build directory if you're using a build system
+# dist/
+
+# Optional: Ignore local configuration
+.env
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# VS Code
+.vscode/
+
+# Optional: Uncomment the following lines if you're using WebStorm or other IDEs
+# .idea/
+
+# Optional: Uncomment the following line if you're using Visual Studio Code
+# .vscode/
+
+# Optional: Uncomment the following line if you're using Sublime Text
+# .sublime/
+
+# Optional: Ignore Yarn Integrity file
+.yarn-integrity
+
+# Optional: Ignore coverage directory
+coverage/
+
+# Optional: Ignore any local .env files
+.env.local
+
+# Optional: Ignore temporary files
+*.swp
+*.swo

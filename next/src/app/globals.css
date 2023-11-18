@@ -1,0 +1,387 @@
+
+
+body{
+  background-image: url(../../public/images/background.jpeg);
+  background-size: cover;
+  background-color: blue;
+  margin: 0;
+  padding: 0;
+}
+
+/*-------------------------------------------------------------------------header-----------------------------------------*/
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgba(255, 255, 255, .05);
+  height: 15%;
+}
+
+.header .icon img {
+  width: 100px;
+  padding: .25rem;
+  margin-left: 2rem;
+  height: 100px;
+  border-radius: 5rem;
+}
+
+.header .nav {
+  width: 50%;
+  display: flex;
+}
+
+.header .nav .title{
+  padding-top: 1rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  
+}
+
+.header .nav ul {
+  display: inline-flex;
+  list-style: none;
+  position: relative;
+  left: 5rem;
+  top: 3rem;
+  justify-content: space-between;
+}
+
+.header .nav ul li a{
+  text-decoration: none;
+  border: none;
+  border-top: .1rem solid white;
+  border-bottom: .1rem solid white;
+  padding: .25rem;
+  margin-right: .75rem;
+  margin-left: .75rem;
+  background: none;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1rem;
+}
+
+.header .searchBar{
+  position: relative;
+  display: inline-flex;
+  height: 40%;
+  right: 3rem;
+  top: 2rem;
+}
+
+.header .searchBar input[type=text] {
+  float: left;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.header .searchBar button {
+  position: relative;
+  top: .25rem;
+  float: right;
+  padding: 15px;
+  background: none;
+  color: white;
+  font-size: 17px;
+  cursor: pointer; 
+  border: none;
+  
+}
+
+.header .searchBar button i {
+  padding: 0;
+
+
+} 
+
+.header .userBtn{
+  right: 0;
+  margin: 1rem;
+  height: 70%;
+  ;
+}
+
+.header .userBtn a{
+  max-height: 100%;
+}
+.header .userBtn a img{
+  max-height: 100%;
+  border-radius: 5rem;
+}
+
+.header .cartBtn{
+  right: 0;
+  margin: 1rem;
+  height: 70%;
+  ;
+}
+
+.header .cartBtn a{
+  max-height: 100%;
+}
+.header .cartBtn a img{
+  max-height: 95%;
+  border-radius: 5rem;
+}
+
+/*espacio vacio*/
+
+
+
+/*---main---*/
+.main{
+  background-color: rgba(255, 0, 0, .05);
+  height: 32rem;
+  margin-top: 7rem;
+  padding-bottom: 3.2rem;
+  overflow-y: scroll;
+}
+
+
+
+/*-------------------------contracted footer--------------------------------------------*/
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background-color: red;
+  height: 3rem;
+}
+
+.footer .nav {
+  width: 25%;
+  border: solid black 1px;
+}
+
+.footer .nav p{
+  margin-left: 1rem;
+  padding: 0;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;  
+}
+
+.footer .nav ul {
+  display: none;
+
+}
+
+.footer .paymentBtn{
+  width: 25%;
+  border: solid black 1px;
+}
+
+.footer .paymentBtn p{
+  margin-left: 1rem;
+  padding: .25rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+.footer .paymentBtn button{
+  display: none;
+}
+
+.footer .contact{
+  width: 50%;
+  border: solid black 1px;
+}
+
+.footer .contact p{
+  margin-left: 1rem;
+  padding: .25rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+ 
+}
+
+.footer .contact ul{
+  display: none;
+}
+
+/*---footer---*/
+/*
+.footer{
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+  display: flex;
+  background-color: red;
+
+}
+
+.footer .nav {
+
+  width: 25%;
+
+  border: solid black 1px;
+}
+
+.footer .nav p{
+  margin-left: 1rem;
+  padding: .5rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;  
+
+  
+}
+
+.footer .nav ul {
+  width: 100%;  
+  list-style: none;
+  margin-left: 1rem;
+  padding: .5rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+
+}
+
+.footer .nav ul li {
+  width: 100%;  
+  list-style: none;
+}
+
+.footer .nav ul li a{
+  text-decoration: none;
+  border: none;
+  padding: .25rem;
+  margin-right: .75rem;
+  margin-left: .75rem;
+  background: none;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1rem;
+}
+
+
+.footer .paymentBtn{
+  width: 25%;
+  border: solid black 1px;
+}
+
+.footer .paymentBtn p{
+  margin-left: 1rem;
+  padding: .5rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+}
+
+.footer .paymentBtn button{
+  margin: 1rem;
+  padding: 15px;
+  background: none;
+  color: white;
+  cursor: pointer; 
+  border: solid 1px black;
+}
+
+.footer .contact{
+  width: 50%;
+  border: solid black 1px;
+}
+
+.footer .contact p{
+  margin-left: 1rem;
+  padding: .5rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 1.5rem;
+  font-weight: bold;
+ 
+}
+
+.footer .contact ul{
+  list-style: none;
+
+  padding: .5rem;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+}
+
+.footer .contact ul li p{
+  color: white;  
+  font-size: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+*/
+/*-----------------------------------------Contact Page------------------------------------------------*/
+
+#contact{
+  background-color: rgba(255, 255, 255, .8);
+  height: 100%;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+}
+
+#contact .tittle {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#contact .tittle h1{
+  text-align: center;
+}
+
+#contact .tittle .accent{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  text-decoration: line-through green 3px;
+}
+
+#contact .contact{
+  display: flex;
+}
+
+
+#contact .contactList{
+  text-align: center;
+  width: 40%;
+  padding: 2rem; 
+  margin: 2rem;
+  border: 1px black solid;
+}
+
+#contact .contactList div{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#contact .contactForm{
+  width: 40%;
+}
+
+#contact .contactForm{
+  text-align: center;
+  width: 40%;
+  padding: 2rem; 
+  margin: 2rem;
+  border: 1px black solid;
+}
+

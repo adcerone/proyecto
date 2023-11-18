@@ -1,0 +1,31 @@
+proyecto2
+    express
+        bin
+        node-modules
+        public
+            components
+            images
+            js
+            modulesstylesheets
+        router
+            router.js
+        app.js
+    next
+        .next
+        node_modules
+        public  
+            components
+            images
+        src
+            app
+                globals.css
+            pages
+                index.js
+                menu.js
+
+
+products
+categories
+users
+cart
+            

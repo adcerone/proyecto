@@ -1,0 +1,68 @@
+
+/*--------------------Menu------------------------------------------------------------------*/
+
+.menuDisplay {
+    background-color: #ccc;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+  
+  .menuDisplay .card{
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .menuDisplay .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .menuDisplay .card-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .menuDisplay .card-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  
+  .menuDisplay .card-body {
+    padding: 10px;
+  }
+  
+  .menuDisplay .card-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .menuDisplay .card-text {
+    margin: 5px 0;
+  }
+  
+  .menuDisplay .card-text.vegan::before {
+    content: "Vegan: ";
+    font-weight: bold;
+  }
+  
+  .menuDisplay .card-text.veggie::before {
+    content: "Veggie: ";
+    font-weight: bold;
+  }
+  
+  .menuDisplay .card-text.tacc-free::before {
+    content: "Tacc Free: ";
+    font-weight: bold;
+  }
+  
+  
+  
