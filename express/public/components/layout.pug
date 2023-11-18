@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title layout 
+    link(rel="stylesheet", href="css/main.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+  body
+    .header
+        .icon
+            img(src="/images/icon.png", title="logo", alt="logo")
+        .nav
+            p.title Tratoria Della Rosa
+            div
+                ul
+                    li
+                        a(href='/') Inicio
+                    li
+                        a(href='/menu') Menu
+                    li
+                        a(href='/contact') Contacto
+        .searchBar
+            input(type="text", placeholder="Search..", name="search1")
+            button(type="submit")
+                i.fa.fa-search(aria-hidden='true') 
+        .cartBtn 
+            a(href="#")  
+                img(src="/images/cartIcon.png", alt="")
+        .userBtn 
+            a(href="/login")  
+                img(src="/images/userlogo.png", alt="")
+
+    .main
+        block content
+    #footer.footerMin
+        div.nav  
+            p navegacion
+            ul
+                li
+                    a(href='/') Inicio
+                li
+                    a(href='/menu') Menu
+                li
+                    a(href='/contact') Contacto
+        div.paymentBtn
+            p medios de pago 
+            div 
+                button.DNIBtn 
+                button.MLBtn 
+        div.contact
+            p contactanos
+                ul
+                    li 
+                        i 
+                        p 223- ***-***
+                    li 
+                        i 
+                        p **instagram**
+                    li 
+                        i 
+                        p **direccion y maps **
+
+    script(src='js/footerFlip.js') 
