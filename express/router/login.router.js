@@ -7,7 +7,7 @@ const uri = 'mongodb://localhost:27017/proyecto';
 
 
 router.post('/', passport.authenticate('local', {
-    successRedirect: '/dashboard',
+    successRedirect: '/',
     failureRedirect: '/',
     failureFlash: true,
   }));
