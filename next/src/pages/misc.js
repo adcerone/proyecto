@@ -1,4 +1,3 @@
-// MiscPage.js
 import React from 'react';
 import FormComponent from '/public/components/FormComponent';
 

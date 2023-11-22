@@ -17,7 +17,7 @@ const Menu = () => {
     };
 
     fetchProducts();
-  }, []); // Empty dependency array to run the effect only once on component mount
+  }, []); 
 
   return (
     <Layout>

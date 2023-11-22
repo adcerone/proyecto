@@ -36,7 +36,7 @@ const FormComponent = () => {
       }
 
       const data = await response.json();
-      console.log(data); // Handle the response as needed
+      console.log(data); 
     } catch (error) {
       console.error('Error submitting form:', error);
     }
