@@ -8,7 +8,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send login request to Express server
+
         const response = await fetch('http://localhost:3001/login', {
       method: 'POST',
       headers: {
@@ -20,12 +20,12 @@ const Login = () => {
     const data = await response.json();
     console.log(data);
 
-    // Check the response and handle accordingly
+
     if (response.ok) {
-      // Redirect or perform actions upon successful login
+
       console.log('Login successful');
     } else {
-      // Handle login failure, display error message, etc.
+
       console.error('Login failed:', data.message);
     }
   };

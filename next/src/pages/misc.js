@@ -4,7 +4,7 @@ import FormComponent from '/public/components/FormComponent';
 const MiscPage = ({ products }) => {
   return (
     <div>
-      {/* Other content if needed */}
+
       <FormComponent />
     </div>
   );

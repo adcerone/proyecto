@@ -1,7 +1,7 @@
 const mongodb = require('./mongodb');
 const Product = require('../models/product');
 
-// Assuming your MongoDB connection is established elsewhere in your application
+
 
 async function main() {
     const addProduct = new Product({
@@ -16,7 +16,7 @@ async function main() {
 
     try {
         const productSave = await addProduct.save();
-        console.log(productSave); // Should be console.log(productSave);
+        console.log(productSave);
     } catch (err) {
         console.error(err);
     }

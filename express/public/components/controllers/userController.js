@@ -5,17 +5,17 @@ const UserController = {
     try {
       const { email, password } = req.body;
 
-      // Check if the email already exists
+
       const existingUser = await UserController.getUserByEmail(email);
 
       if (existingUser) {
         return res.status(400).json({ message: 'Email already exists.' });
       }
 
-      // Create a new user
+
       const newUser = new User({ email, password });
 
-      // Save the user to the database
+
       await UserController.createUser(newUser);
 
       res.status(201).json({ message: 'User registered successfully.' });
@@ -27,7 +27,7 @@ const UserController = {
 
   
   getAllUsers: async () => {
-    // Query the database to get all users
+
     const users = await User.find();
     return users;
   },
