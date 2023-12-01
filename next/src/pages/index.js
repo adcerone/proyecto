@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <Layout>
       <div>
-        <h1>Welcome to my Next.js app!</h1>
+        <h1>index</h1>
       </div>
     </Layout>
   );
