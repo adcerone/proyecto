@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from '../../public/components/layout';
+import ('../pages/contact.css')
 
 const Contact = () => {
   return (
     <Layout>
       <div id="contact">
-        <div class="title">
+        <div class="tittle">
           <p class="accent">--------------------------------------------</p>
           <h1>Contacto</h1>
           <p class="accent">--------------------------------------------</p>

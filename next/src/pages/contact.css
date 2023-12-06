@@ -1,0 +1,59 @@
+.main{
+  overflow-y:hidden;
+
+}
+
+
+#contact {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+
+}
+
+#contact .tittle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+#contact .tittle h1 {
+  text-align: center;
+}
+
+#contact .tittle .accent {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  text-decoration: line-through green 3px;
+}
+
+#contact .contact {
+  display: flex;
+
+}
+
+#contact .contactList{
+  text-align: center;
+  width: 40%;
+  padding: 2rem; 
+  margin: 2rem;
+  border: 1px black solid;
+}
+
+#contact .contactList div {
+  padding: 0;
+  margin: 0;
+}
+
+#contact .contactForm {
+  text-align: center;
+  width: 40%;
+  padding: 0rem;
+  margin: 2rem;
+  border: 1px black solid;
+}

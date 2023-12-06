@@ -22,20 +22,19 @@ const Menu = () => {
   return (
     <Layout>
       <div>
-        <h1>Menu</h1>
+        <h1>Nuestra carta</h1>
         <div className='menuDisplay'>
           {products.map((product) => (
             <div key={product._id} className="card">
-              <div className="card-header">
-                <h5 className="card-title">{product.name}</h5>
-              </div>
               <div className="card-body">
-                <p className="card-text">Description: {product.description}</p>
-                <p className="card-text">Price: ${product.price}</p>
-                <img className="card-img" src={product.image} alt={product.name} />
-                {product.isVegan && <p className="card-text">Vegan: Yes</p>}
-                {product.isVeggie && <p className="card-text">Veggie: Yes</p>}
-                {product.isTaccFree && <p className="card-text">Tacc Free: Yes</p>}
+                <img className="card-img" src={"images/placeholderimg.png"} alt={product.name} />
+                <p className="card-description">Description: {product.description}</p>
+                <h5 className="card-tittle">{product.name}</h5>               
+                <p className="card-price">Price: ${product.price}</p>
+                {product.isVegan && <p className="card-optVV">Vegan: Yes</p>}
+                {product.isVeggie && <p className="card-optV">Veggie: Yes</p>}
+                {product.isTaccFree && <p className="card-optT">Tacc Free: Yes</p>}
+                <button className='addProduct'>añadir</button>
               </div>
             </div>
         ))}

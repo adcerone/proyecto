@@ -99,34 +99,19 @@ body{
 
 } 
 
-.header .userBtn{
+.header #modalBtns{
   right: 0;
-  margin: 1rem;
+  top: 2rem;
   height: 70%;
-  ;
+
+
 }
 
-.header .userBtn a{
-  max-height: 100%;
-}
-.header .userBtn a img{
-  max-height: 100%;
-  border-radius: 5rem;
-}
-
-.header .cartBtn{
-  right: 0;
-  margin: 1rem;
-  height: 70%;
-  ;
-}
-
-.header .cartBtn a{
-  max-height: 100%;
-}
-.header .cartBtn a img{
-  max-height: 95%;
-  border-radius: 5rem;
+.header #modalBtns button{
+  margin: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 3rem;
 }
 
 /*espacio vacio*/
@@ -151,13 +136,14 @@ body{
   bottom: 0;
   width: 100%;
   display: flex;
-  background-color: red;
+  background-color: rgb(205, 50, 50);
   height: 3rem;
+  border: solid 1px  rgb(150, 10, 10);
 }
 
 .footer .nav {
   width: 25%;
-  border: solid black 1px;
+
 }
 
 .footer .nav p{
@@ -326,62 +312,83 @@ body{
   padding-bottom: 0;
 }
 */
-/*-----------------------------------------Contact Page------------------------------------------------*/
 
-#contact{
-  background-color: rgba(255, 255, 255, .8);
-  height: 100%;
-  width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 
+/*-------------------------------modals-------------------------------------------------*/
+.modal {
+  display: none;
 }
 
-#contact .tittle {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-#contact .tittle h1{
-  text-align: center;
-}
-
-#contact .tittle .accent{
-  padding-left: 1rem;
-  padding-right: 1rem;
-  text-align: center;
-  text-decoration: line-through green 3px;
-}
-
-#contact .contact{
-  display: flex;
+.modal.visible {
+  display: block;
 }
 
 
-#contact .contactList{
-  text-align: center;
-  width: 40%;
-  padding: 2rem; 
-  margin: 2rem;
+#cartModal {
+  position: fixed; 
   border: 1px black solid;
+  z-index: 1; 
+  right: 2rem;
+  top: 6rem;
+  width: 33%; 
+  height: 70%;
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
 }
 
-#contact .contactList div{
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+#cartModal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
 
-#contact .contactForm{
-  width: 40%;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-#contact .contactForm{
-  text-align: center;
-  width: 40%;
-  padding: 2rem; 
-  margin: 2rem;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#profileModal {
+  position: fixed; 
   border: 1px black solid;
+  z-index: 1; 
+  right: 2rem;
+  top: 6rem;
+  width: 33%; 
+  height: 70%;
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
 }
 
+#profileModal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

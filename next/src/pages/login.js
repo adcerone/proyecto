@@ -1,53 +1,25 @@
-// pages/login.js
-import React, { useState } from 'react';
+// LoginPage.jsx
+import React from 'react';
+import LoginFormComponent from '../../public/components/loginFormComponent';
+import axios from 'axios';
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const LoginPage = () => {
+  const handleLogin = async ({ username, password }) => {
+    try {
+      const response = await axios.post('/login', { username, password });
+      console.log('Login successful:', response.data);
+    } catch (error) {
+      console.error('Login failed:', error.response.data);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-
-        const response = await fetch('http://localhost:3001/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-
-
-    if (response.ok) {
-
-      console.log('Login successful');
-    } else {
-
-      console.error('Login failed:', data.message);
     }
   };
 
   return (
     <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
+      <h1>Login Page</h1>
+      <LoginFormComponent onSubmit={handleLogin} />
     </div>
   );
 };
 
-export default Login;
+export default LoginPage;

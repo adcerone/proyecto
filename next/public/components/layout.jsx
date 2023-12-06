@@ -1,8 +1,19 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Head from 'next/head';
 import '../../src/app/globals.css';
+import ProfileBtnController from './profileBtnController'
+import ProfileBtnComponent from './modalDisplayComponent'
+import Register from '../../src/pages/register';
+import Login from '../../src/pages/login'
+
 
 const Layout = ({ children }) => {
+
+  console.log('Before calling ProfileBtnController');
+  const profileController = ProfileBtnController();
+  console.log('After calling ProfileBtnController');
+  const { modalVisible, openModal, closeModal } = profileController;
+
   return (
     <>
       <div className="header">
@@ -31,10 +42,26 @@ const Layout = ({ children }) => {
             <i className="fa fa-search"></i>
           </button>
         </div>
-
+        <div id='modalBtns'>
+          <button id="cartBtn"><img src="../images/cart-shopping-solid.svg" alt="Cart"></img></button>
+          <button id="profileBtn"><img src="../images/user-solid.svg" alt="Profile"></img></button>
+        </div>
       </div>
       <div className='main'>
         {children}
+        <div id="cartModal" className="modal">
+          <div className="modal-content">
+            <span className="close">&times;</span>
+
+          </div>
+        </div>
+        <div id="profileModal" className={`modal ${modalVisible ? 'visible' : ''}`}>
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>&times;</span>
+            {<Login />}
+            {<Register />}
+          </div>
+        </div>
       </div>
       <div className="footer">
         <div className="nav">

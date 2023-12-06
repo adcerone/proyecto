@@ -1,13 +1,13 @@
 const productsRouter = require('./products.router')
-const loginRouter = require('./login.router')
+const usersRouter = require('./users.router')
 const registerRouter = require('./register.router')
-const getUsersRouter = require('./getUsers.router')
+const loginRouter = require('./login.router')
 
 function apiRouter(server) {
     server.use('/products', productsRouter)
-    server.use('/login', loginRouter)
+    server.use('/users', usersRouter)
     server.use('/register', registerRouter)
-    server.use('/userlist', getUsersRouter)
+    server.use('/login', loginRouter)
 }
 
 module.exports = apiRouter; 
