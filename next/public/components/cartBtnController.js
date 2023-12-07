@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
-const ProfileBtnComponent = () => {
+const CartBtnComponent = () => {
     useEffect(() => {
-        var modal = document.getElementById("profileModal");
-        var btn = document.getElementById("profileBtn");
+        var modal = document.getElementById("cartModal");
+        var btn = document.getElementById("cartBtn");
         var span = document.getElementsByClassName("close")[0];
         console.log("Adding event listeners");
         
@@ -39,4 +39,4 @@ const ProfileBtnComponent = () => {
     );
 };
 
-export default ProfileBtnComponent;
+export default CartBtnComponent;

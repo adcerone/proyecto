@@ -73,6 +73,7 @@ body{
 }
 
 .header .searchBar input[type=text] {
+  display: none;
   float: left;
   padding: 6px;
   border: none;
@@ -94,17 +95,19 @@ body{
 }
 
 .header .searchBar button i {
-  padding: 0;
+  padding: 6rem;
 
 
 } 
 
 .header #modalBtns{
-  right: 0;
-  top: 2rem;
+  position: fixed;
+  top: 0.5rem;
   height: 70%;
+}
 
-
+.header #modalBtns{
+  right: 3rem;
 }
 
 .header #modalBtns button{
@@ -141,30 +144,14 @@ body{
   border: solid 1px  rgb(150, 10, 10);
 }
 
-.footer .nav {
-  width: 25%;
-
-}
-
-.footer .nav p{
-  margin-left: 1rem;
-  padding: 0;
-  color: white;
-  text-shadow: 5px 5px 10px black;
-  font-size: 1.5rem;
-  font-weight: bold;
-  width: 100%;  
-}
-
-.footer .nav ul {
-  display: none;
-
-}
-
 .footer .paymentBtn{
-  width: 25%;
-  border: solid black 1px;
+  width: 50%;
 }
+.footer:hover .paymentBtn{
+  width: 50%;
+  background-color: aqua;
+}
+
 
 .footer .paymentBtn p{
   margin-left: 1rem;
@@ -360,15 +347,16 @@ body{
 }
 #profileModal {
   position: fixed; 
-  border: 1px black solid;
+  border: 1px solid rgb(205, 50, 50);
+  border-radius: 2rem;
   z-index: 1; 
   right: 2rem;
-  top: 6rem;
+  top: 7rem;
   width: 33%; 
   height: 70%;
   overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
+  background-color: rgba(234, 228, 228, 0.8);
+  text-align: center;
 }
 
 #profileModal-content {

@@ -6,7 +6,11 @@ const cors = require('cors');
 const connectToDatabase = require('./public/js/mongodb');
 const passport = require('passport');
 const session = require('express-session');
-const passportConfig = require('./public/components/authenticate/passport-config')
+const passportConfig = require('./public/components/authenticate/passport-config');
+const User = require('./public/models/user');
+
+require('dotenv').config();
+
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });

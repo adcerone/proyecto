@@ -2,17 +2,17 @@ import { ReactNode, useEffect } from 'react';
 import Head from 'next/head';
 import '../../src/app/globals.css';
 import ProfileBtnController from './profileBtnController'
+import CartBtnController from './cartBtnController'
 import ProfileBtnComponent from './modalDisplayComponent'
+import Cart from '../../src/pages/cart';
+
 import Register from '../../src/pages/register';
 import Login from '../../src/pages/login'
 
 
 const Layout = ({ children }) => {
-
-  console.log('Before calling ProfileBtnController');
-  const profileController = ProfileBtnController();
-  console.log('After calling ProfileBtnController');
-  const { modalVisible, openModal, closeModal } = profileController;
+  const { modalVisible, openModal, closeModal } = ProfileBtnController();
+  const { cartModalVisible, openCartModal, closeCartModal } = CartBtnController();
 
   return (
     <>
@@ -49,41 +49,26 @@ const Layout = ({ children }) => {
       </div>
       <div className='main'>
         {children}
-        <div id="cartModal" className="modal">
+        <div id="cartModal" className={`modal ${cartModalVisible ? 'visible' : ''}`}>
           <div className="modal-content">
-            <span className="close">&times;</span>
-
+            <span className="close" onClick={closeCartModal}>&times;</span>
+            <Cart />
           </div>
         </div>
         <div id="profileModal" className={`modal ${modalVisible ? 'visible' : ''}`}>
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            {<Login />}
-            {<Register />}
+            <ProfileBtnComponent />
+            
           </div>
         </div>
       </div>
       <div className="footer">
-        <div className="nav">
-          <p>Navegación</p>
-          <ul>
-            <li>
-              <a href='/'>Inicio</a>
-            </li>
-            <li>
-              <a href='/menu'>Menu</a>
-            </li>
-            <li>
-              <a href='/contact'>Contacto</a>
-            </li>
-          </ul>
-        </div>
-
         <div className="paymentBtn">
           <p>Medios de Pago</p>
           <div>
-            <button className="DNIBtn">DNI</button>
-            <button className="MLBtn">MercadoLibre</button>
+            <button><img src='/public/images/ctadni.jpg'></img>DNI</button>
+            <button><img src='/public/images/mpago.png'></img>MercadoLibre</button>
           </div>
         </div>
 
@@ -97,10 +82,6 @@ const Layout = ({ children }) => {
             <li>
               <i className="fa fa-instagram"></i>
               <p>**instagram**</p>
-            </li>
-            <li>
-              <i className="fa fa-map-marker"></i>
-              <p>**Dirección y Maps**</p>
             </li>
           </ul>
         </div>

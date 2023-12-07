@@ -3,7 +3,7 @@ const router = express.Router();
 const { MongoClient } = require('mongodb');
 const Product = require('../public/models/product');
 
-const uri = 'mongodb://localhost:27017/proyecto';
+const uri = 'mongodb+srv://admin1:155525449@01.simycuz.mongodb.net/';
 
 //--------------get-----------//
 router.get('/', async (req, res) => {

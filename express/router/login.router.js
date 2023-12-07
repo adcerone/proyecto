@@ -1,42 +1,55 @@
 const express = require('express');
 const router = express.Router();
-const { MongoClient } = require('mongodb');
-const user = require('../public/models/user');
-const passport = require('passport');
+const User = require('../public/models/user');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-const uri = 'mongodb://localhost:27017/proyecto';
+// Assuming you have a MongoDB connection somewhere in your code
 
-router.get('/', (req, res) => {
-    res.send('Login Page');
+router.post('/', function (req, res) {
+    let body = req.body;
+
+    User.findOne({ email: body.email }, (err, userDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err: err
+            });
+        }
+
+        if (!userDB) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: "Usuario o contraseña incorrectos"
+                }
+            });
+        }
+
+        if (!bcrypt.compareSync(body.password, userDB.password)) {
+            return res.status(400).json({
+                ok: false,
+                err: {
+                    message: "Usuario o contraseña incorrectos"
+                }
+            });
+        }
+
+        // Replace process.env.SEED_AUTENTICACION with a hardcoded secret for testing
+        const secretKey = process.env.JWT_SECRET || 'yourSecretKeyForTesting';
+
+        let token = jwt.sign({
+            user: userDB,
+        }, secretKey, {
+            expiresIn: process.env.CADUCIDAD_TOKEN || '1h' // Set a default expiration if not provided
+        });
+
+        res.json({
+            ok: true,
+            user: userDB,
+            token,
+        });
+    });
 });
-/*----------------------login----------------------------------------- */
-router.post('/', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/',
-    failureFlash: true,
-}));
 
-/*----------------------logout--------------------------------------- */
-
-router.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
-});
-
-/*----------------------loged in user--------------------------------*/
-
-router.get('/user', (req, res) => {
-    if (req.isAuthenticated()) {
-        // User is logged in
-        res.json({ user: req.user });
-    } else {
-        // User is not logged in
-        res.json({ user: null });
-    }
-});
-
-
-
-
-
-module.exports = router
+module.exports = router;

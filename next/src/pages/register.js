@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import RegisterFormComponent from '../../public/components/registerFormComponent';
+import RegisterComponent from '../../public/components/registerComponent';
 
 const Register = () => {
   const handleRegistration = async (userData) => {
@@ -20,8 +20,8 @@ const Register = () => {
 
   return (
     <div>
-      <h1>Registration Page</h1>
-      <RegisterFormComponent onSubmit={handleRegistration} />
+      <h1>signin</h1>
+      <RegisterComponent onSubmit={handleRegistration} />
     </div>
   );
 };

@@ -1,24 +1,30 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../public/models/user');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-router.post('/', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const newUser = new User({ email, password });
-    await newUser.save();
-    console.log(`User registered with ID: ${newUser._id}`);
-  } catch (error) {
-    console.error('Registration failed:', error.message);
-
-    // Handle validation errors
-    if (error.name === 'ValidationError') {
-      return res.status(400).send('Validation error: ' + error.message);
+router.post('/', function (req, res) {
+  let body = req.body;
+  let { nombre, email, password, role } = body;
+  let user = new User({
+    nombre,
+    email,
+    password: bcrypt.hashSync(password, 10),
+    role
+  });
+user.save((err, userDB) => {
+    if (err) {
+      return res.status(400).json({
+         ok: false,
+         err,
+      });
     }
-
-    res.status(500).send('Registration failed');
-  }
+    res.json({
+          ok: true,
+          user: userDB
+       });
+    })
 });
 
 module.exports = router;

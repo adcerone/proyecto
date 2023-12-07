@@ -2,7 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Cart = require('../public/models/cart');
 const Product = require('../public/models/product');
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
 const authenticateUser = require('../public/components/authenticate/authenticateUser');
+
 
 // Get user's cart
 router.get('/', authenticateUser, async (req, res) => {

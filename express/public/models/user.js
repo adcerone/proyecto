@@ -1,33 +1,47 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcrypt');
 
-const userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+let rolesValidos = {
+  values: ["ADMIN", "USER"],
+  message: '{VALUE} no es un role válido'
+}
+
+
+let Schema = mongoose.Schema;
+
+const userSchema = new Schema({
+  nombre: {
+      type: String,
+      required: [true, 'El nombre es necesario'],
+  },
+  email: {
+      type: String,
+      unique: true,
+      required: [true, "El correo es necesario"],
+  },
+  password: {
+      type: String,
+      required: [true, "Le contraseña es obligatoria"],
+  },
+  role: {
+      type: String,
+      default: 'USER',
+      required: [true],
+      enum: rolesValidos,
+  },
 });
 
-userSchema.pre('save', async function (next) {
-  const user = this;
-  if (!user.isModified('password')) return next();
+userSchema.methods.toJSON = function() {
+  let user = this;
+  let userObject = user.toObject();
+  delete userObject.password;
+  return userObject;
+}
 
-  try {
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(user.password, salt);
-    user.password = hashedPassword;
-    return next();
-  } catch (error) {
-    return next(error);
-  }
-});
+userSchema.plugin(uniqueValidator, {
+  message: '{PATH} debe de ser único'
+})
+module.exports = mongoose.model('User', userSchema)
 
-userSchema.methods.comparePassword = async function (candidatePassword) {
-  try {
-    return await bcrypt.compare(candidatePassword, this.password);
-  } catch (error) {
-    throw error;
-  }
-};
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;

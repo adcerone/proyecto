@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = 'mongodb://localhost:27017/proyecto';
+const uri = 'mongodb+srv://admin1:155525449@01.simycuz.mongodb.net/';
 
 async function connectToDatabase() {
   try {

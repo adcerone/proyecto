@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginComponent = () => {
+const LoginComponent = ({ onLoginSuccess, onCloseModal }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -22,14 +22,28 @@ const LoginComponent = () => {
             });
 
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                const errorData = await response.json();
+                throw new Error(errorData.err.message || 'Network response was not ok');
             }
 
             const contentType = response.headers.get('Content-Type');
             if (contentType && contentType.includes('application/json')) {
                 const data = await response.json();
-                console.log(data);
+
+                // Assuming the server sends a token in the response
+                const { token, user } = data;
+
+                // Store the token in localStorage (or use a more secure storage mechanism)
+                localStorage.setItem('token', token);
+
                 console.log('Login successful');
+                console.log('User:', user);
+
+                // Call the onLoginSuccess callback to update the parent component
+                onLoginSuccess(token);
+
+                // Call the onCloseModal callback to close the modal
+                onCloseModal();
 
                 // Redirect or perform actions after successful login
             } else {
@@ -45,7 +59,6 @@ const LoginComponent = () => {
 
     return (
         <div id='loginModal'>
-            <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Email:

@@ -1,6 +1,6 @@
 // LoginPage.jsx
 import React from 'react';
-import LoginFormComponent from '../../public/components/loginFormComponent';
+import LoginComponent from '../../public/components/loginComponent';
 import axios from 'axios';
 
 const LoginPage = () => {
@@ -16,8 +16,8 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>Login Page</h1>
-      <LoginFormComponent onSubmit={handleLogin} />
+      <h1>Login</h1>
+      <LoginComponent onSubmit={handleLogin} />
     </div>
   );
 };
