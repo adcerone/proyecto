@@ -66,24 +66,21 @@ const Layout = ({ children }) => {
       <div className="footer">
         <div className="paymentBtn">
           <p>Medios de Pago</p>
-          <div>
-            <button><img src='/public/images/ctadni.jpg'></img>DNI</button>
-            <button><img src='/public/images/mpago.png'></img>MercadoLibre</button>
+          <div className="paymentBtnDiv">
+            <button id='btnOne'><img src='../images/ctadni.jpg'></img></button>
+            <h3>Cuenta DNI</h3>
+            <button id='btnTwo'><img src='../images/mpago.png'></img></button>
+            <h3>Mercadopago</h3>
           </div>
         </div>
 
         <div className="contact">
           <p>Contactanos</p>
-          <ul>
-            <li>
-              <i className="fa fa-phone"></i>
-              <p>223-***-***</p>
-            </li>
-            <li>
-              <i className="fa fa-instagram"></i>
-              <p>**instagram**</p>
-            </li>
-          </ul>
+          <div id='socialsBtn'>
+            <button><img src='../images/whatsapp.svg'></img></button>
+            <button><img src='../images/instagram.svg'></img></button>
+            <button><img src='../images/facebook.svg'></img></button>
+          </div>
         </div>
       </div>
     </>
