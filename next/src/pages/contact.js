@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../../public/components/layout';
+import ContactForm from '../../public/components/contactFormComponent';
 import('../pages/contact.css')
 
 const Contact = () => {
@@ -36,7 +37,7 @@ const Contact = () => {
           </div>
           <div class="contactForm">
             <h2>Formulario de contacto</h2>
-
+            <ContactForm />
           </div>
         </div>
       </div>

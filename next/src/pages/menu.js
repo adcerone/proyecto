@@ -19,39 +19,26 @@ const Menu = () => {
     fetchProducts();
   }, []); 
 
-  const addToCart = async (productId) => {
-    const token = localStorage.getItem('token');
-    
+  const addToCart = (productId, productName) => {
     try {
-      
-      if (!token) {
-        console.error('Authorization token not found');
-        return;
-      }
-  
-      const response = await fetch('http://localhost:3001/cart/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
+      const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingProduct = existingCart.find((item) => item.productId === productId);
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        const newProduct = {
           productId: productId,
+          productName: productName,
           quantity: 1,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        };
+        existingCart.push(newProduct);
       }
-
-      const data = await response.json();
-      console.log('Item added to the cart:', data);
+      localStorage.setItem('cart', JSON.stringify(existingCart));  
+      console.log('Item added to the cart:', existingCart);
     } catch (error) {
       console.error('Error adding item to the cart:', error.message);
     }
   };
-
   return (
     <Layout>
       <div>

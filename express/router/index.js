@@ -3,14 +3,16 @@ const userRouter = require('./user.router')
 const registerRouter = require('./register.router')
 const loginRouter = require('./login.router')
 const User = require('../public/models/user')
-const cartRouter = require('./cart.router')
+const msgRouter = require('./msg.router')
+
 
 function apiRouter(server) {
     server.use('/products', productsRouter)
     server.use('/user', userRouter)
     server.use('/register', registerRouter)
     server.use('/login', loginRouter)
-    server.use('/cart', cartRouter)
+    server.use('/msg', msgRouter)
+
 
 }
 

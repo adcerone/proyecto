@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
       client = new MongoClient(uri);
       await client.connect();
   
-      const database = client.db('proyecto');
+      const database = client.db('test');
       const collection = database.collection('products');
   
       const products = await collection.find({}).toArray();

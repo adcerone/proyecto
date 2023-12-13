@@ -30,6 +30,7 @@ const LoginComponent = ({ onLoginSuccess, onCloseModal }) => {
             if (contentType && contentType.includes('application/json')) {
                 const data = await response.json();
 
+                localStorage.setItem('user', JSON.stringify(data.user));
                 // Assuming the server sends a token in the response
                 const { token, user } = data;
 

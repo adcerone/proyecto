@@ -39,16 +39,16 @@ app.prepare().then(() => {
 
   passportConfig(passport);
 
-  // Routes
+
   const apiRouter = require('./router');
   apiRouter(server);
 
-  // Next.js handler
+
   server.all('*', (req, res) => {
     return handle(req, res);
   });
 
-  // Start the server
+
   const port = process.env.PORT || 3001;
   server.listen(port, () => {
     console.log(`Server is running on port ${port}`);

@@ -16,6 +16,10 @@ const ProfileBtnController = () => {
           // Handle the case where the token is not available
           console.error('Authorization token not found');
           return;
+        } else{
+          //set isloggedin to true//
+          setLoggedIn(true);
+
         }
 
         const response = await axios.get('http://localhost:3001/user', {
@@ -43,7 +47,7 @@ const LoggedInContent = () => {
   console.log('Rendering LoggedInContent');
   return (
     <div>
-      <p>Welcome, User!</p>
+      <p>Welcome!</p>
       <Profile />
     </div>
   );

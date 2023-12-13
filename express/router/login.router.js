@@ -35,13 +35,13 @@ router.post('/', function (req, res) {
             });
         }
 
-        // Replace process.env.SEED_AUTENTICACION with a hardcoded secret for testing
+
         const secretKey = process.env.JWT_SECRET || 'yourSecretKeyForTesting';
 
         let token = jwt.sign({
             user: userDB,
         }, secretKey, {
-            expiresIn: process.env.CADUCIDAD_TOKEN || '1h' // Set a default expiration if not provided
+            expiresIn: process.env.CADUCIDAD_TOKEN || '1h' 
         });
 
         res.json({
