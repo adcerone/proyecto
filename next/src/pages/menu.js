@@ -45,7 +45,7 @@ const Menu = () => {
         <div id='menuHeader'>
           <h1>Nuestra carta</h1>
           <button>
-            <image src='/images/magnifying-glass-solid.svg' alt="Magnifying Glass"></image>
+            <img src='/images/magnifying-glass-solid.svg' alt="Magnifying Glass"></img>
           </button>
         </div>  
         <div/>
