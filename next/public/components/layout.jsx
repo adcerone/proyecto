@@ -1,13 +1,14 @@
 import { ReactNode, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+
 import '../../src/app/globals.css';
 import ProfileBtnController from './profileBtnController'
 import CartBtnController from './cartBtnController'
 import ProfileBtnComponent from './modalDisplayComponent'
-import Cart from '../../src/pages/cart';
-
-import Register from '../../src/pages/register';
-import Login from '../../src/pages/login'
+import Cart from '../../src/pages/cart/cart';
+import Register from '../../src/pages/register/register';
+import Login from '../../src/pages/login/login'
 
 
 const Layout = ({ children }) => {
@@ -16,6 +17,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Head>
+        <title>Trattoria Della Rosa</title>
+      </Head>
       <div className="header">
         <div className="icon">
           <img src="/images/icon.png" title="logo" alt="logo" />
@@ -25,13 +29,15 @@ const Layout = ({ children }) => {
           <div>
             <ul>
               <li>
-                <a href='./'>Inicio</a>
+                <Link  href='../'>Inicio</Link>
               </li>
               <li>
-                <a href='./menu'>Menu</a>
+                <Link href="/menu/menu">
+                  Menu
+                </Link>
               </li>
               <li>
-                <a href='./contact'>Contacto</a>
+                <Link href='../contact/contact'>Contacto</Link>
               </li>
             </ul>
           </div>
@@ -59,7 +65,7 @@ const Layout = ({ children }) => {
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
             <ProfileBtnComponent />
-            
+
           </div>
         </div>
       </div>

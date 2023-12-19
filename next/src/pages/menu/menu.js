@@ -1,6 +1,6 @@
 import './menu.css';
 import React, { useEffect, useState } from 'react';
-import Layout from '../../public/components/layout';
+import Layout from '/public/components/layout';
 
 const Menu = () => {
   const [products, setProducts] = useState([]);

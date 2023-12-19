@@ -6,7 +6,6 @@ const ProfileBtnComponent = () => {
         var btn = document.getElementById("profileBtn");
         var span = document.getElementsByClassName("close")[0];
         console.log("Adding event listeners");
-        
 
         const openModal = () => {
             console.log('Button clicked!'); 
@@ -28,7 +27,11 @@ const ProfileBtnComponent = () => {
         return () => {
             btn.removeEventListener("click", openModal);
             span.removeEventListener("click", closeModal);
-            window.removeEventListener("click", closeModal);
+            window.removeEventListener("click", (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
         };
     }, []);
 

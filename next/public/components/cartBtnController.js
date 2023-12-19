@@ -28,7 +28,11 @@ const CartBtnComponent = () => {
         return () => {
             btn.removeEventListener("click", openModal);
             span.removeEventListener("click", closeModal);
-            window.removeEventListener("click", closeModal);
+            window.removeEventListener("click", (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
         };
     }, []);
 

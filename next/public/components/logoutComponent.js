@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const handleLogout = () => {
+const LogoutButton = () => {
+  const handleLogout = () => {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('user');
       localStorage.removeItem('cart');
@@ -9,4 +10,12 @@ const handleLogout = () => {
     }
   };
 
-export default handleLogout
+  return (
+    <button onClick={handleLogout}>
+      Logout
+    </button>
+  );
+};
+
+export default LogoutButton;
+

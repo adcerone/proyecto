@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Login from '../../src/pages/login';
-import Register from '../../src/pages/register';
-import Profile from '../../src/pages/profile';
+import Login from '../../src/pages/login/login';
+import Register from '../../src/pages/register/register';
+import Profile from '../../src/pages/profile/profile';
 import axios from 'axios';
 
 const ProfileBtnController = () => {

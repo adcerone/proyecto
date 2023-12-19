@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-const handleLogout = import('../../public/components/logoutComponent')
+import LogoutButton from '../../../public/components/logoutComponent';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-      const storedUser = localStorage.getItem('user');
-      const parsedUser = storedUser ? JSON.parse(storedUser) : null;
-      setUser(parsedUser);
-    
+    const storedUser = localStorage.getItem('user');
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    setUser(parsedUser);
   }, []);
 
   if (!user) {
@@ -21,7 +20,7 @@ const Profile = () => {
       <div>
         <p>Usuario: {user.nombre}</p>
         <p>Email: {user.email}</p>
-        <button onClick={handleLogout}>Logout</button>
+        <LogoutButton />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 // LoginPage.jsx
 import React from 'react';
-import LoginComponent from '../../public/components/loginComponent';
+import LoginComponent from '../../../public/components/loginComponent';
 import axios from 'axios';
 
 const LoginPage = () => {

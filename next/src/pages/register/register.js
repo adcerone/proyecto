@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import RegisterComponent from '../../public/components/registerComponent';
+import RegisterComponent from '../../../public/components/registerComponent';
 
 const Register = () => {
   const handleRegistration = async (userData) => {

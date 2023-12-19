@@ -1,14 +1,12 @@
 import React from 'react';
 import Layout from '../../public/components/layout';
-import'./index.css'
+import Home from './home/home';
+import Menu from './menu/menu';
 
 const HomePage = () => {
   return (
     <Layout>
-      <div>
-        <h1 id='homeTittle'>Trattoria della Rosa</h1>
-        <h2 id='homeSubtittle'>Amor en cada pasta,<br/>tradicion en cada receta.</h2>
-      </div>
+      <Home />
     </Layout>
   );
 };
